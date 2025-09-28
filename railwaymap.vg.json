@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 900,
+  "height": 700,
+  "title": {
+    "text": "Indian Railway Network",
+    "fontSize": 18,
+    "anchor": "start",
+    "color": "#2c3e50"
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [80, 22],
+    "scale": 1000
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "india_state.geojson",
+        "format": {"type": "json"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e9ecef",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "railway_network.geojson",
+        "format": {"type": "json"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#000000",
+        "strokeWidth": 0.8,
+        "fill": "transparent"
+      }
+    }
+  ]
+}
